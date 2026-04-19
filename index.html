@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Satellite Monitoring – Perfect Alignment</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+}
+
+/* HEADER */
+.header {
+    height: 300px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("header_satellite.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.image-block {
+    margin-bottom: 60px;
+}
+
+.image-block h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+    border-left: 5px solid #27ae60;
+    padding-left: 15px;
+}
+
+/* MAP WRAPPER (The Magic Layer) */
+.map-bg {
+    width: 105%;
+	margin-left: -1%;
+    /* انطباق ۱۰۰ درصد تصویر پس‌زمینه */
+    background-image: url("satellite_underlay.jpg");
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;
+    
+    border-radius: 12px;
+    border: 2px solid #fff;
+    overflow: hidden;
+
+    /* افکت سه‌بعدی روی کل ظرف (هر دو لایه با هم) */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    transform: perspective(1200px) rotateX(15deg);
+    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1), box-shadow 0.5s ease;
+}
+
+.map-bg:hover {
+    transform: perspective(1200px) rotateX(0deg) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+}
+
+/* ANALYSIS OVERLAY IMAGE */
+.map-bg img {
+    display: block;
+    width: 100%;
+    height: auto;
+    /* اعمال شفاف‌سازی روی لایه بالایی */
+    mix-blend-mode: normal;
+    transition: opacity 0.3s ease;
+}
+
+/* TOGGLE BUTTON */
+#toggleBlend {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+#toggleBlend:hover {
+    background: #2ecc71;
+    transform: translateY(-2px);
+}
+
+#toggleBlend:active {
+    transform: translateY(0);
+}
+
+h1 {
+    font-size: 48px;        /* سایز بزرگ */
+    margin-top: 40px;
+}
+
+.logo-wrap{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
+.logo{
+    width: clamp(90px, 12vw, 140px);      /* ثابت */
+    height: auto;      /* نسبت تصویر حفظ می‌شود */
+    max-width: none;   /* جلوی کوچک/بزرگ شدن ناخواسته را بگیر */
+    object-fit: contain;
+    display: block;
+	border-radius: 3px;
+}
+
+.contact-footer{
+    margin-top:10px;
+    padding:10px 10px;
+    background:#0f172a;
+    color:#e5e7eb;
+    text-align:center;
+    font-family:Arial, sans-serif;
+}
+
+.contact-footer h3{
+    margin-bottom:15px;
+    font-size:25px;
+}
+
+
+.contact-footer p {
+	margin:6px 0;
+    font-size:20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;   /* فاصله بیشتر بین آیکن و متن */
+    margin: 8px 0;
+}
+
+.contact-footer a{
+    color:#60a5fa;
+    text-decoration:none;
+}
+
+.contact-footer a:hover{
+    text-decoration:underline;
+}
+
+.map-box{
+    margin-top:20px;
+}
+
+.map-box img{
+    width:100%;
+    max-width:500px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.map-box img:hover{
+    transform:scale(1.03);
+}
+
+
+</style>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<body>
+
+<button id="toggleBlend">👁 Toggle Analysis Layer</button>
+
+<div class="header">
+    <div>
+        <h1>Precision Agriculture Demo</h1>
+        <p>Satellite Data Fusion • Real-time Monitoring</p>
+    </div>
+</div>
+<div class="logo-wrap">
+  <img src="logo.png" alt="Logo" class="logo">
+</div>
+
+<div class="container">
+
+	
+
+    <div class="image-block">
+        <h2>Water Stress Analysis (کلیک کنید)</h2>
+        <div class="map-bg">
+            <img src="water_stress_sample.png" class="analysis-layer">
+        </div>
+    </div>
+
+    <div class="image-block">
+        <h2>Chlorophyll Density</h2>
+        <div class="map-bg">
+            <img src="chlorophyll_sample.png" class="analysis-layer">
+        </div>
+    </div>
+
+    <div class="image-block">
+        <h2>Nitrogen Distribution</h2>
+        <div class="map-bg">
+            <img src="nitrogen_sample.png" class="analysis-layer">
+        </div>
+    </div>
+	
+	<footer class="contact-footer">
+
+<h3>Contact</h3>
+
+<p>
+<i class="fa-solid fa-location-dot"></i>
+2F, No 15, Fakoori st, Fatemi sq, Tehran, Iran
+</p>
+
+<p>
+<i class="fa-solid fa-phone"></i>
++98 21 8833 4028
+</p>
+
+<p>
+<i class="fa-solid fa-mobile-screen-button"></i>
+     +98 933 098 9001
+</p>
+
+<p>
+<i class="fa-solid fa-envelope"></i>
+ javad.koohpayma@ut.ac.ir
+</p>
+
+<p>
+<i class="fa-solid fa-graduation-cap"></i>
+<a href="https://scholar.google.com/" target="_blank">
+Google Scholar
+</a>
+</p>
+
+<div class="map-box">
+
+<a href="https://www.google.com/maps?q=35.72016,51.40021" target="_blank">
+
+<img src="company_location.jpg" alt="Company Location">
+
+</a>
+
+</div>
+
+
+</footer>
+
+
+
+
+</div>
+
+<script>
+
+    // دکمه کلی - همان قبلی
+    let isBlended = false;   // پیش فرض: غیر شفاف
+    const button = document.getElementById("toggleBlend");
+    const images = document.querySelectorAll(".analysis-layer");
+
+    button.onclick = function() {
+        isBlended = !isBlended;
+
+        images.forEach(img => {
+            img.style.mixBlendMode = isBlended ? "multiply" : "normal";
+        });
+
+        button.style.background = isBlended ? "#27ae60" : "#2c3e50";
+        button.innerText = isBlended ? "👁 Analysis Mode (ON)" : "🗺 Satellite Only (OFF)";
+    };
+
+    // کلیک روی هر عکس → فقط همان یکی شفاف/غیرشفاف شود
+    images.forEach(img => {
+        img.addEventListener("click", function() {
+            if (img.style.mixBlendMode === "multiply") {
+                img.style.mixBlendMode = "normal";     // غیر شفاف
+            } else {
+                img.style.mixBlendMode = "multiply";   // شفاف
+            }
+        });
+    });
+
+</script>
+
+
+</body>
+</html>
