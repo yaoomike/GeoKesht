@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>GeoKesht</title>
+	<link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+	
+</head>
+<body>
+
+<div class="header">
+    <div class="logo-wrap">
+        <img src="logo.png" alt="Logo" class="logo">
+    </div>
+
+    <div class="header-text">
+        <h1>GeoKesht</h1>
+        <p>سنجش از دور، GIS و کشاورزی دقیق</p>
+    </div>
+</div>
+
+<nav>
+    <ul>
+        <li><a href="index.html">صفحه اصلی</a></li>
+        <li><a href="remotesensing.html">سنجش از دور</a></li>
+        <li><a href="gis.html">GIS</a></li>
+        <li><a href="projects.html">پروژه‌ها</a></li>
+        <li><a href="about.html">درباره ما</a></li>
+        <li><a href="contact.html">تماس با ما</a></li>
+    </ul>
+</nav>
+
+
+
+<section class="content">
+
+<div class="intro-text">
+    <h1>سنجش از دور در کشاورزی و تصاویر ماهواره‌ای </h1>
+    <p>
+        سنجش از دور (Remote Sensing) روشی پیشرفته برای پایش سطح زمین بدون تماس مستقیم است.
+        ماهواره‌هایی مانند Sentinel‑2 با ثبت داده‌ها در باندهای متعدد طیفی، امکان تحلیل دقیق وضعیت پوشش
+        گیاهی، رطوبت خاک، سلامت مزارع و تغییرات زیست‌محیطی را فراهم می‌کنند.
+    </p>
+
+    <p>
+        مزیت‌های اصلی Sentinel‑2:
+    </p>
+    <ul>
+        <li>قدرت تفکیک مکانی ۱۰ متر</li>
+        <li>پوشش طیفی گسترده (۱۲ باند مختلف)</li>
+        <li>دوره بازگشت ۵ روزه</li>
+        <li>داده‌های با کیفیت بالا</li>
+        <li>مناسب برای کشاورزی دقیق (Precision Agriculture)</li>
+    </ul>
+
+    <p>
+        این باندهای طیفی، اطلاعاتی از رفتار نوری گیاهان ثبت می‌کنند؛ ازجمله بازتابش در باند قرمز، مادون‌قرمز
+        نزدیک (NIR) و مادون‌قرمز کوتاه‌موج (SWIR). ترکیب این باندها امکان استخراج شاخص‌های مهمی مانند
+        کلروفیل، تنش آبی و نیتروژن را فراهم می‌کند.<br>
+		در شکلهای زیر پارمترهای مذکور برای نیشکر در خوزستان محاسبه شده اند.
+    </p>
+</div>
+
+	
+
+    <div class="intro-text">
+  <h2> ۱- تنش آبی (Water Stress) </h2>
+  <p class="analysis-desc" >
+      
+
+تنش آبی زمانی رخ می‌دهد که گیاه آب کافی دریافت نکند. با استفاده از باندهای مادون‌قرمز نزدیک (NIR) و مادون‌قرمز کوتاه‌موج (SWIR) در تصاویر ماهواره Sentinel‑2 می‌توان تغییرات رطوبت برگ (Leaf Water Content) و وضعیت تبخیر–تعرق گیاه را ارزیابی کرد.
+
+از آنجا که کاهش آب در بافت برگ ابتدا در باندهای مادون‌قرمز آشکار می‌شود، سنجش از دور قادر است تنش آبی را پیش از آنکه علائم آن در باندهای مرئی یا با چشم انسان قابل مشاهده باشد تشخیص دهد.
+<br>این نقشه به کشاورزان کمک می‌کند:
+<li>تشخیص زودهنگام تنش آبی پیش از مشاهده ظاهری گیاه</li>
+<li>مدیریت دقیق‌تر و هدفمند آبیاری</li>
+<li>کاهش مصرف و هدررفت آب</li>
+مناطق قرمز = تنش آبی شدید <br>
+مناطق آبی/سبز = وضعیت مناسب رطوبت
+</p>
+
+  <div class="map-bg">
+    <img src="water_stress_sample.png" class="analysis-layer">
+  </div>
+</div>
+
+
+
+     <div class="intro-text">
+        <h2>۲- چگالی کلروفیل (Chlorophyll Density)</h2>
+		<p class="analysis-desc">
+ کلروفیل شاخص اصلی سلامت گیاه و میزان فتوسنتز است.
+
+سنتینل‑۲ دارای باندهای ویژه گیاهی (Red-Edge) است که برای تخمین دقیق کلروفیل ایده‌آل‌اند.
+
+<br>کاربردها:
+
+<li>تشخیص بیماری‌ها و آفت‌ها</li>
+<li>بررسی سلامت عمومی مزرعه</li>
+<li>مدیریت کوددهی و تغذیه</li>
+رنگ‌های سبز تیره نشان می‌دهند:
+
+<li>فتوسنتز فعال</li>
+<li>رشد مطلوب</li>
+<li>وضعیت خوب تغذیه</li>
+</p>
+        <div class="map-bg">
+            <img src="chlorophyll_sample.png" class="analysis-layer">
+        </div>
+    </div>
+
+    <div class="intro-text">
+        <h2>۳- نیتروژن (Nitrogen Distribution)</h2>
+		<p class="analysis-desc">
+   نیتروژن مهم‌ترین عنصر رشد فعال است و کمبود آن باعث:
+
+<li>زردی برگ‌ها</li>
+<li>کاهش رشد</li>
+<li>کاهش عملکرد محصول</li>
+با تحلیل طیفی کلروفیل و باندهای Red-Edge می‌توان تخمین خوبی از مقدار نیتروژن برگ‌ها به‌دست آورد.
+
+<br>کاربرد عملی:
+
+<li>جلوگیری از مصرف بیش از حد کود</li>
+<li> شناسایی نقاط کمبود یا مازاد</li>
+<li>افزایش عملکرد و کاهش هزینه کوددهی</li>
+</p>
+
+        <div class="map-bg">
+            <img src="nitrogen_sample.png" class="analysis-layer">
+        </div>
+    </div>
+
+
+</section>
+<button id="toggleBlend">👁 Toggle Analysis Layer</button>
+<script>
+
+    // دکمه کلی - همان قبلی
+    let isBlended = false;   // پیش فرض: غیر شفاف
+    const button = document.getElementById("toggleBlend");
+    const images = document.querySelectorAll(".analysis-layer");
+
+    button.onclick = function() {
+        isBlended = !isBlended;
+
+        images.forEach(img => {
+            img.style.mixBlendMode = isBlended ? "multiply" : "normal";
+        });
+
+        button.style.background = isBlended ? "#27ae60" : "#2c3e50";
+        button.innerText = isBlended ? "👁 Analysis Mode (ON)" : "🗺 Satellite Only (OFF)";
+    };
+
+    // کلیک روی هر عکس → فقط همان یکی شفاف/غیرشفاف شود
+    images.forEach(img => {
+        img.addEventListener("click", function() {
+            if (img.style.mixBlendMode === "multiply") {
+                img.style.mixBlendMode = "normal";     // غیر شفاف
+            } else {
+                img.style.mixBlendMode = "multiply";   // شفاف
+            }
+        });
+    });
+
+</script>
+
+
+</body>
+</html>
