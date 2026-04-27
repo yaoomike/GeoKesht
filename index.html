@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>GeoKesht</title>
+	<link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+</head>
+<body>
+
+<div class="header">
+    <div class="logo-wrap">
+        <img src="logo.png" alt="Logo" class="logo">
+    </div>
+
+    <div class="header-text">
+        <h1>Remote Sensing & GIS</h1>
+        <p>سنجش از دور، GIS و کشاورزی دقیق</p>
+    </div>
+</div>
+
+<nav>
+    <ul>
+        <li><a href="index.html">صفحه اصلی</a></li>
+        <li><a href="remotesensing.html">سنجش از دور</a></li>
+        <li><a href="gis.html">GIS</a></li>
+        <li><a href="projects.html">پروژه‌ها</a></li>
+        <li><a href="about.html">درباره ما</a></li>
+        <li><a href="contact.html">تماس با ما</a></li>
+    </ul>
+</nav>
+
+<section class="content">
+    <h1>تحلیل داده‌های مکانی و سنجش‌ازدور</h1>
+	<p>این سامانه با استفاده از داده‌های ماهواره‌ای، شاخص‌های رشد محصولات، وضعیت پوشش گیاهی، سلامت مزارع و تغییرات اقلیمی را به صورت تحلیلی و ساده ارائه می‌دهد. هدف ما کمک به بهبود مدیریت مزارع، افزایش بهره‌وری و کاهش هزینه‌های کشاورزی است.</p>
+	<a href="contact.html" class="cta-btn">دخواست همکاری</a>
+
+
+</section>
+<div class="stats-card">
+    <div class="stats-header">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>آمار بازدید سایت</span>
+    </div>
+
+    <div class="stats-content">
+        <div class="stat-item">
+            <span class="stat-title">بازدید امروز</span>
+            <span id="today-count" class="stat-number">--</span>
+        </div>
+
+        <div class="stat-item">
+            <span class="stat-title">بازدید کل</span>
+            <span id="total-count" class="stat-number">--</span>
+        </div>
+    </div>
+</div>
+
+<script>
+fetch("counter.php")
+  .then(response => response.json())
+  .then(data => {
+      document.getElementById("today-count").innerText = data.today;
+      document.getElementById("total-count").innerText = data.total;
+  });
+</script>
+
+</body>
+</html>
+
