@@ -1,0 +1,453 @@
+/* ===================== */
+/* BASE STYLES */
+/* ===================== */
+
+body {
+    margin: 0;
+    /* font-family: "B Mitra", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+	font-family:  sans-serif;
+    background: #f0f2f5;
+    direction: rtl;
+}
+
+/* ===================== */
+/* HEADER */
+/* ===================== */
+
+.header {
+    position: relative;
+    height: 300px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("header_satellite.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 42px;
+}
+
+.header-text p {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+/* LOGO */
+
+.logo-wrap {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
+.logo {
+    width: clamp(120px, 12vw, 220px);
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* ===================== */
+/* NAVIGATION */
+/* ===================== */
+
+nav {
+    background: #1b5e20;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px 25px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    background: #388e3c;
+}
+
+/* ===================== */
+/* CONTENT */
+/* ===================== */
+
+.content {
+    padding: 40px;
+    max-width: 1000px;
+    margin: auto;
+    background: white;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+/* ===================== */
+/* INTRO & TEXT */
+/* ===================== */
+
+.intro-text,
+.analysis-desc {
+    direction: rtl;
+    text-align: justify;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    line-height: 1.9;
+    color: #2c3e50;
+}
+
+.intro-text h2 {
+    text-align: right;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.block-desc {
+    max-width: 1200px;
+    margin: 8px auto 12px;
+    padding: 0 10px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* ===================== */
+/* IMAGE BLOCKS */
+/* ===================== */
+
+.image-block {
+    margin-bottom: 60px;
+}
+
+.image-block h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+    border-left: 5px solid #27ae60;
+    padding-left: 15px;
+}
+
+/* ===================== */
+/* MAP SECTION */
+/* ===================== */
+
+.map-bg {
+    width: 100%;
+    background-image: url("satellite_underlay.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    border: 2px solid #fff;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    transform: perspective(1200px) rotateX(20deg);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.map-bg:hover {
+    transform: perspective(1200px) rotateX(0deg) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+}
+
+.map-bg img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ===================== */
+/* ANALYSIS IMAGE */
+/* ===================== */
+
+.analysis-layer {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.analysis-layer:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* ===================== */
+/* CONTACT FOOTER */
+/* ===================== */
+.contact-footer a {
+    color: #60a5fa;
+    text-decoration: none;
+}
+
+.contact-footer a:hover {
+    text-decoration: underline;
+}
+
+
+.contact-footer{
+    margin-top:10px;
+    padding:10px 10px;
+    background:#0f172a;
+    color:#e5e7eb;
+    text-align:center;
+    font-family:Arial, sans-serif;
+	 direction: ltr;
+}
+
+.contact-footer h3{
+    margin-bottom:15px;
+    font-size:25px;
+}
+
+
+.contact-footer p {
+	margin:6px 0;
+    font-size:20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;   /* فاصله بیشتر بین آیکن و متن */
+    margin: 8px 0;
+}
+
+
+
+
+/* ===================== */
+/* MAP & QR */
+/* ===================== */
+
+.map-box {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.map-box img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.map-box img:hover {
+    transform: scale(1.03);
+}
+
+.qr-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.qr-container img {
+    width: 90px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    padding: 8px;
+    background: white;
+}
+
+/* ===================== */
+/* FOOTER */
+/* ===================== */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #ddd;
+    margin-top: 40px;
+}
+
+/* ===================== */
+/* RESPONSIVE */
+/* ===================== */
+
+@media (max-width: 600px) {
+
+    .header {
+        height: 220px;
+        padding-top: 50px;
+    }
+
+    .header-text h1 {
+        font-size: 28px;
+    }
+
+    .header-text p {
+        font-size: 16px;
+    }
+
+    .logo-wrap {
+        top: 10px;
+        left: 10px;
+    }
+
+    .logo {
+        width: 90px !important;
+    }
+
+}
+
+
+
+
+.image-container {
+  display: flex;
+  justify-content: center; /* اگر بخواهی وسط صفحه باشد */
+  gap: 20px;              /* فاصله بین تصاویر */
+  flex-wrap: wrap;        /* بسیار مهم، اجازه می‌دهد وقتی جا نیست، تصاویر بروند زیر هم */
+}
+
+.image-container img {
+  height: 300px;
+  width: auto;
+  max-width: 100%;       /* باعث می‌شود وقتی صفحه کوچک شد عرض تصویر بیش از اندازه container نشود */
+  object-fit: contain;   /* حفظ نسبت و نمایش کامل */
+}
+
+/* وقتی صفحه خیلی کوچک‌تر شد، ارتفاع تصاویر کمتر شود */
+@media (max-width: 650px) {
+  .image-container img {
+    height: 200px;  /* یا هر اندازه که متناسب باشه */
+  }
+}
+
+
+
+/* ---- Modern Header ---- */
+.main-header {
+    background: linear-gradient(135deg, #0a4a2f, #0e6b43);
+    padding: 15px 0;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.header-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 300px;
+    height: auto;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.4));
+}
+
+.title-group h1 {
+    font-size: 28px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.title-group p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+
+
+/* Hover underline animation */
+.nav a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background: #ffffff;
+    transition: width 0.3s;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.nav a.active {
+    font-weight: bold;
+    color: #e0ffe9;
+}
+
+/* ---- Responsive ---- */
+@media(max-width: 850px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+@media(max-width: 500px) {
+    .title-group h1 {
+        font-size: 22px;
+    }
+    .logo {
+        width: 55px;
+    }
+}
+
+
+/* ===================== */
+/* موبایل: افزایش فونت متن‌ها */
+/* ===================== */
+
+@media (max-width: 768px) {
+    .intro-text,
+    .analysis-desc,
+    .block-desc,
+    .content,
+    .container,
+    .intro-text p,
+    .analysis-desc p,
+    .block-desc p,
+    .content p,
+    .container p {
+        font-size: 19px !important;   /* اندازه دلخواه - 19 یا 20 خوب است */
+        line-height: 1.7 !important;  /* فاصله سطر بیشتر برای خوانایی */
+    }
+
+    /* اگر بخش‌های دیگری هم متن دارند */
+    .image-block p,
+    .map-box + p {
+        font-size: 19px;
+        line-height: 1.7;
+    }
+}
